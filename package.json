@@ -2,6 +2,11 @@
   "name": "test-search-in-process-arvore",
   "version": "0.1.0",
   "private": true,
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^14.0.0",
@@ -24,7 +29,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "yarn eslint --fix"
+    "lint": "yarn eslint --fix ./src"
   },
   "eslintConfig": {
     "extends": [
@@ -48,21 +53,32 @@
     "@typescript-eslint/eslint-plugin": "^5.50.0",
     "@typescript-eslint/parser": "^5.61.0",
     "eslint": "^8.0.1",
+    "eslint-config-airbnb": "^19.0.4",
     "eslint-config-prettier": "^8.8.0",
     "eslint-config-standard-with-typescript": "^36.0.0",
+    "eslint-import-resolver-alias": "^1.1.2",
     "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-import-helpers": "^1.3.1",
+    "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.32.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "git-commit-msg-linter": "^5.0.4",
     "husky": "^8.0.3",
     "jest": "^29.6.0",
+    "lint-staged": "^13.2.3",
     "msw": "^1.2.2",
     "plop": "^3.1.2",
-    "prettier": "^2.8.8"
+    "prettier": "^2.8.8",
+    "prettier-eslint": "^15.0.1",
+    "tslint-config-prettier": "^1.18.0"
   },
   "main": "index.js",
   "repository": "git@github.com:brualencar/test-search-in-process-arvore.git",
-  "license": "MIT"
+  "license": "MIT",
+  "msw": {
+    "workerDirectory": "public"
+  }
 }
