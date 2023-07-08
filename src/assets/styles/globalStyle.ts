@@ -2,7 +2,8 @@ export const theme = {
   colors: {
     background: {
       neutral: {
-        light: '#DEE1E6',
+        light: '#F1F7FC',
+        default: '#DEE1E6',
         strong: '#ADB7BF',
       },
       brand: {
@@ -32,6 +33,7 @@ export const theme = {
       regular: '400',
       medium: '500',
       bold: '600',
+      extraBold: '700',
     },
     size: {
       base: '16px',
