@@ -2,6 +2,7 @@ export const theme = {
   colors: {
     background: {
       neutral: {
+        white: '#FFF',
         light: '#F1F7FC',
         default: '#DEE1E6',
         strong: '#ADB7BF',
@@ -15,6 +16,7 @@ export const theme = {
     },
     text: {
       neutral: {
+        white: '#FFF',
         default: '#406A76',
         strong: '#000',
         light: '#B2B4B9',
@@ -25,6 +27,9 @@ export const theme = {
       brand: {
         default: '#A977D8',
       },
+    },
+    border: {
+      footer: '#D9D9D9',
     },
   },
   font: {
