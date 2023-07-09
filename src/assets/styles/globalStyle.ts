@@ -9,6 +9,7 @@ export const theme = {
       },
       brand: {
         light: '#DAF6F3',
+        default: '#E8FFFC',
       },
       secondary: {
         strong: '#8553F4',
