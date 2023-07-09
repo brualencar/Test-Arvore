@@ -1,5 +1,6 @@
 export interface VolumeItem {
   volumeInfo: {
+    id: string;
     title: string;
     authors: string[];
     categories: string[];

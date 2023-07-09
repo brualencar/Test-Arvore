@@ -11,8 +11,8 @@ export const Container = styled.div<ShelfBackgroundProps>`
   font-family: ${({ theme }) => theme.font.family};
   padding: ${({ theme }) => theme.padding.km6}; + ${({ theme }) =>
   theme.padding.km6};
-  ${({ background }) =>
-    background &&
+  ${({ $background }) =>
+    $background &&
     css`
       background: ${({ theme }) => theme.colors.background.brand.light};
     `};
@@ -24,8 +24,8 @@ export const Title = styled.h2<ShelfColorProps>`
   font-weight: ${({ theme }) => theme.font.weight.bold};
   margin-bottom: ${({ theme }) => theme.spacing.km10};
 
-  ${({ color }) =>
-    color &&
+  ${({ $color }) =>
+    $color &&
     css`
       color: ${({ theme }) => theme.colors.text.brand.default};
       font-size: ${({ theme }) => theme.font.size.m7};

@@ -32,12 +32,10 @@ function Footer() {
               xs={4}>
               <Styled.Button>
                 <Button
-                  isuppercase={false}
                   text='Política de privacidade'
                   variant='primary'
                 />
                 <Button
-                  isuppercase={false}
                   text='Ajuda'
                   variant='primary'
                 />

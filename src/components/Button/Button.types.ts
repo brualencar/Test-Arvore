@@ -5,10 +5,10 @@ export interface ButtonProps
   color?: string;
   text?: string;
   variant: Variant;
-  isuppercase: boolean;
+  isUppercase?: boolean;
 }
 
 export interface StyledButtonProps {
-  variantcolor: Variant;
-  isuppercase: boolean;
+  $variantColor: Variant;
+  $isUppercase: boolean;
 }

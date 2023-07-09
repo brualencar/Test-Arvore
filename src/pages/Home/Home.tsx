@@ -44,32 +44,22 @@ function Home() {
       {loadinBooks && (
         <Styled.Shelf>
           <Shelf
-            color={false}
-            key='Aventura'
             title='Aventura'
-            background={false}
             books={itemsAdventure}
           />
 
           <Shelf
-            color={false}
-            key='Ação'
             title='Ação'
-            background={false}
             books={itemsAction}
           />
           <Shelf
             color
-            key='Destaques'
             title='Destaques'
             background
             books={itemsHorror}
           />
           <Shelf
-            color={false}
-            key='Infantil'
             title='Infantil'
-            background={false}
             books={itemsChild}
           />
         </Styled.Shelf>

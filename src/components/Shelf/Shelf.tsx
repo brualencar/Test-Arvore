@@ -1,11 +1,16 @@
 import React from 'react';
-import { Grid, Col, Row } from 'react-flexbox-grid';
+import { Grid, Col } from 'react-flexbox-grid';
 import Slider from 'react-slick';
 
 import * as Styled from './Shelf.style';
 import { ShelfProps } from './Shelf.types';
 
-function Shelf({ title, background, books, color }: ShelfProps) {
+function Shelf({
+  title,
+  background = false,
+  books,
+  color = false,
+}: ShelfProps) {
   const settings = {
     infinite: false,
     speed: 500,
@@ -40,15 +45,15 @@ function Shelf({ title, background, books, color }: ShelfProps) {
   };
   return (
     <Styled.Wrapper>
-      <Styled.Container background={background}>
+      <Styled.Container $background={background}>
         <Grid fluid>
           <Col>
             <div>
-              <Styled.Title color={color}>{title}</Styled.Title>
+              <Styled.Title $color={color}>{title}</Styled.Title>
               <div>
                 <Slider {...settings}>
                   {books.map((book) => (
-                    <div>
+                    <div key={book.id}>
                       {book.volumeInfo.imageLinks ? (
                         <img
                           src={book.volumeInfo.imageLinks?.thumbnail}
