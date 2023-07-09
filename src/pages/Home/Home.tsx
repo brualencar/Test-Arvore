@@ -4,6 +4,7 @@ import { useRequest } from 'ahooks';
 
 import { Footer } from '../../components/Footer';
 import { Header } from '../../components/Header';
+import { Search } from '../../components/Search';
 import { Shelf } from '../../components/Shelf';
 import { GetVolume } from '../../services/GetVolumes/GetVolumes';
 import * as Styled from './Home.style';
@@ -35,6 +36,10 @@ function Home() {
   return (
     <>
       <Header />
+
+      <Styled.Search>
+        <Search />
+      </Styled.Search>
 
       {loadinBooks && (
         <Styled.Shelf>
