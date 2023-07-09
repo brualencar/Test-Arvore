@@ -3,13 +3,13 @@ import React from 'react';
 import * as Styled from './Button.style';
 import { ButtonProps } from './Button.types';
 
-function Button({ color, text, variant, isUppercase }: ButtonProps) {
+function Button({ color, text, variant, isuppercase }: ButtonProps) {
   return (
     <Styled.Button
       type='button'
       color={color}
-      variantColor={variant}
-      isUppercase={isUppercase}>
+      variantcolor={variant}
+      isuppercase={isuppercase}>
       {text}
     </Styled.Button>
   );

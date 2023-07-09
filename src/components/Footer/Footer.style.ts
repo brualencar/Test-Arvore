@@ -3,7 +3,7 @@ import { styled } from 'styled-components';
 export const Wrapper = styled.div``;
 
 export const Container = styled.div`
-  position: fixed;
+  // position: fixed;
   display: grid;
   align-items: center;
   left: 0;
@@ -12,6 +12,7 @@ export const Container = styled.div`
   font-family: ${({ theme }) => theme.font.family};
   height: 100px;
   border: 0.5px solid ${({ theme }) => theme.colors.border.footer};
+  background: ${({ theme }) => theme.colors.background.neutral.white};
   padding: ${({ theme }) => theme.padding.km10};
 `;
 
