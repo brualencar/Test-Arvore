@@ -21,13 +21,13 @@ export const Button = styled.button<StyledButtonProps>`
   border-radius: 10px;
   padding: ${({ theme }) => theme.padding.km3}
     ${({ theme }) => theme.padding.km4};
-  ${({ variantcolor }) =>
+  ${({ $variantColor }) =>
     css`
-      ${COLOR[variantcolor]}
+      ${COLOR[$variantColor]}
     `};
 
-  ${({ isuppercase }) =>
-    isuppercase &&
+  ${({ $isUppercase }) =>
+    $isUppercase &&
     css`
       text-transform: uppercase;
     `}

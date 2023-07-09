@@ -2,15 +2,15 @@ import { VolumeItem } from '../../services/GetVolumes/GetVolumes.types';
 
 export interface ShelfProps {
   title?: string;
-  background: boolean;
+  background?: boolean;
   books: VolumeItem[];
-  color: boolean;
+  color?: boolean;
 }
 
 export interface ShelfBackgroundProps {
-  background: boolean;
+  $background: boolean;
 }
 
 export interface ShelfColorProps {
-  color: boolean;
+  $color: boolean;
 }
