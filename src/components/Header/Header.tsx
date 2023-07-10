@@ -19,7 +19,7 @@ function Header() {
               md={2}
               sm={3}
               xs={4}>
-              <Styled.Logo>
+              <Styled.Logo href='/'>
                 <ArvoreLogo />
               </Styled.Logo>
             </Col>

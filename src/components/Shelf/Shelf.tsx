@@ -55,12 +55,15 @@ function Shelf({
                   {books.map((book) => (
                     <div key={book.id}>
                       {book.volumeInfo.imageLinks ? (
-                        <img
-                          src={book.volumeInfo.imageLinks?.thumbnail}
-                          alt={book.volumeInfo.title}
-                        />
+                        <Styled.BookImage>
+                          <img
+                            src={book.volumeInfo.imageLinks?.thumbnail}
+                            alt={book.volumeInfo.title}
+                          />
+                        </Styled.BookImage>
                       ) : (
                         <Styled.NoImage>
+                          <Styled.LeafIcon />
                           <p>Sem capa</p>
                         </Styled.NoImage>
                       )}

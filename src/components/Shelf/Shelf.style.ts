@@ -1,5 +1,6 @@
 import { styled, css } from 'styled-components';
 
+import Leaf from '../../assets/svg/Leaf';
 import { ShelfBackgroundProps, ShelfColorProps } from './Shelf.types';
 
 export const Wrapper = styled.div`
@@ -32,12 +33,29 @@ export const Title = styled.h2<ShelfColorProps>`
     `}
 `;
 
+export const BookImage = styled.div`
+  & img {
+    width: 198px;
+    height: 296px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 5px 0px rgba(5, 59, 75, 0.06);
+  }
+
+  @media only screen and (max-width: 575px) {
+    & img {
+      width: 145px;
+      height: 220px;
+    }
+  }
+`;
+
 export const NoImage = styled.div`
-  width: 128px;
-  height: 184px;
+  width: 198px;
+  height: 296px;
   background: ${({ theme }) => theme.colors.background.brand.default};
   box-shadow: 0px 4px 5px 0px rgba(5, 59, 75, 0.06);
   position: relative;
+  border-radius: 10px;
 
   & > p {
     display: flex;
@@ -51,4 +69,15 @@ export const NoImage = styled.div`
     font-size: ${({ theme }) => theme.font.size.base};
     font-weight: ${({ theme }) => theme.font.weight.bold};
   }
+
+  @media only screen and (max-width: 575px) {
+    width: 145px;
+    height: 220px;
+  }
+`;
+
+export const LeafIcon = styled(Leaf)`
+  width: 100px;
+  float: right;
+  padding: ${({ theme }) => theme.padding.km6};
 `;
