@@ -77,7 +77,7 @@ function SearchResult() {
         },
         {
           text: 'Mais de R$100',
-          value: '',
+          value: '101',
           complexValue: {
             from: 101,
           },
@@ -168,6 +168,7 @@ function SearchResult() {
                 mainTitle='Filtrar'
                 filters={filters}
                 onFilterChange={onFilterChange}
+                clearFilter={() => runSearch(search, startIndex)}
               />
             </Col>
             <Col lg={9}>
@@ -187,6 +188,7 @@ function SearchResult() {
                               src={book.volumeInfo.imageLinks?.thumbnail}
                               alt={book.volumeInfo.title}
                             />
+                            <Styled.UnavailableBook />
                           </Styled.BookImage>
                           <Styled.BookTitle>
                             {book.volumeInfo.title}

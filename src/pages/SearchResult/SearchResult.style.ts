@@ -25,6 +25,14 @@ export const Book = styled.div`
   grid-template-columns: repeat(5, 1fr);
   column-gap: ${({ theme }) => theme.spacing.km5};
   row-gap: ${({ theme }) => theme.spacing.km10};
+
+  @media only screen and (max-width: 992px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media only screen and (max-width: 575px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 `;
 
 export const Search = styled.div`
@@ -82,6 +90,20 @@ export const BookImage = styled.div`
       height: 220px;
     }
   }
+`;
+
+export const UnavailableBook = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #4f392f;
+  text-align: center;
+  font-family: Inter;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100%;
 `;
 
 export const BookTitle = styled.p`
