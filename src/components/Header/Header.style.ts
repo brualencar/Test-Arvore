@@ -15,7 +15,7 @@ export const Container = styled.div`
   box-shadow: 0px 4px 5px 0px rgba(5, 59, 75, 0.06);
 `;
 
-export const Logo = styled.div`
+export const Logo = styled.a`
   display: flex;
   align-items: center;
 `;

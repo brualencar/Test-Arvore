@@ -7,19 +7,19 @@ export interface VolumeItem {
     imageLinks?: {
       thumbnail: string;
     };
-    saleInfo?: {
-      saleability: string;
-      retailPrice: {
-        amount: number;
-      };
+  };
+  saleInfo?: {
+    saleability: string;
+    retailPrice: {
+      amount: number;
     };
-    accessInfo: {
-      epub: {
-        isAvailable: boolean;
-      };
-      pdf: {
-        isAvailable: boolean;
-      };
+  };
+  accessInfo: {
+    epub: {
+      isAvailable: boolean;
+    };
+    pdf: {
+      isAvailable: boolean;
     };
   };
 }
