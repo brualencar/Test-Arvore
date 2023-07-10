@@ -12,7 +12,6 @@ export const Container = styled.div`
   height: 100px;
   border: 0.5px solid ${({ theme }) => theme.colors.border.footer};
   background: ${({ theme }) => theme.colors.background.neutral.white};
-  padding: ${({ theme }) => theme.spacing.km10};
   margin-top: ${({ theme }) => theme.spacing.km10};
 `;
 

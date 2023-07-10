@@ -19,6 +19,7 @@ const COLOR = {
 export const Button = styled.button<StyledButtonProps>`
   height: 40px;
   border-radius: 10px;
+  cursor: pointer;
   padding: ${({ theme }) => theme.padding.km3}
     ${({ theme }) => theme.padding.km4};
   ${({ $variantColor }) =>

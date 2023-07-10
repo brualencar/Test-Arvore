@@ -6,6 +6,7 @@ export interface ButtonProps
   text?: string;
   variant: Variant;
   isUppercase?: boolean;
+  onClick?: () => void;
 }
 
 export interface StyledButtonProps {
