@@ -46,12 +46,12 @@ function Filter({
         />
       )}
       {Object.entries(filters).map(([filterType, category]) => (
-        <div key={category.title}>
+        <div key={filterType}>
           <Styled.Title>{category.title}</Styled.Title>
           <Styled.Filter>
             <ul>
               {category?.items?.map((item: ItemProps, index: any) => (
-                <li key={item.label}>
+                <li key={item.id}>
                   <input
                     name={item.label}
                     type='checkbox'

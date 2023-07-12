@@ -68,7 +68,6 @@ function SearchResult() {
   const forceUpdate = React.useCallback(() => updateState({}), []);
   const [search, setSearch] = useState('');
   const [books, setBooks] = useState<VolumeItem[]>([]);
-  const [allBooks, setAllBooks] = useState<VolumeItem[]>([]);
   const [startIndex, setStartIndex] = useState(0);
   const [searchParamsFn, _] = useSearchParams();
   const [filteredBooks, setFilteredBooks] = useState<VolumeItem[]>([]);
@@ -79,12 +78,43 @@ function SearchResult() {
       manual: true,
       onSuccess: ({ data: { items = [] } = {} }) => {
         setBooks(items);
-        setAllBooks(items);
+      },
+    }
+  );
+  const { loading: isLoadingMore, run: runLoadMoreSearch } = useRequest(
+    (query, index) => GetVolume(query, { maxResults: 40, startIndex: index }),
+    {
+      manual: true,
+      onSuccess: ({ data: { items = [] } = {} }) => {
+        setBooks([...books, ...items]);
       },
     }
   );
 
-  // scrooll fn -> setStartIndex
+  const observerTarget = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (entries[0].isIntersecting) {
+          const index = startIndex === 0 ? 41 : startIndex + 40;
+          setStartIndex(index);
+          runLoadMoreSearch(searchParamsFn.get('search'), index);
+        }
+      },
+      { threshold: 1 }
+    );
+
+    if (observerTarget.current) {
+      observer.observe(observerTarget.current);
+    }
+
+    return () => {
+      if (observerTarget.current) {
+        observer.unobserve(observerTarget.current);
+      }
+    };
+  }, [observerTarget, setStartIndex, runLoadMoreSearch, searchParamsFn]);
 
   const reducer = (state: any, action: any) => {
     const { itemIndex, filterType }: { itemIndex: number; filterType: string } =
@@ -278,8 +308,8 @@ function SearchResult() {
 
   useEffect(() => {
     if (search === '') return;
-    runSearch(search, startIndex);
-  }, [search, startIndex]);
+    runSearch(search, 0);
+  }, [search]);
 
   useEffect(() => {
     const filtersSelected: { min: number; max: number }[] = state.price?.items
@@ -384,7 +414,7 @@ function SearchResult() {
           </Row>
         </Grid>
       </Styled.Wrapper>
-
+      <div ref={observerTarget} />
       <Footer />
     </>
   );
