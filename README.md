@@ -1,46 +1,58 @@
-# Getting Started with Create React App
+# Busca de livros - Árvore
+![image](https://img.shields.io/badge/React-20232A?logo=react&logoColor=61DAFB)
+![image](https://img.shields.io/badge/TypeScript-007ACC?logo=typescript&logoColor=white)
+![image](https://img.shields.io/badge/styled--components-DB7093?logo=styled-components&logoColor=white)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+<img width="1154" alt="Screenshot 2023-07-12 at 14 40 18" src="https://github.com/brualencar/test-search-in-process-arvore/assets/25457612/f1e2a6f4-d768-46b9-86d1-7acc12ff5f89">
 
-In the project directory, you can run:
 
-### `npm start`
+## 🚀 Instalando e rodando o projeto local
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### Clonando o projeto
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```bash
+  git clone git@github.com:brualencar/test-search-in-process-arvore.git
+```
 
-### `npm test`
+Va para a pasta do projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+  cd test-search-in-process-arvore
+```
 
-### `npm run build`
+Instale as dependencias
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```bash
+  yarn install
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+#### Inicie o projeto
 
-### `npm run eject`
+```bash
+  yarn start
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Abra [http://localhost:3000](http://localhost:3000)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Rodando o Lint
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+```bash
+  yarn lint
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Rodando os testes
 
-## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+  yarn test
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Ajustes e melhorias
+
+O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
+
+- [ ] Melhorias responsivas
+- [ ] Aumentar coverage de testes
+- [ ] Melhorar performance do scroll infinito
