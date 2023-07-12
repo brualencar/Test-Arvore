@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render snapshot 1`] = `
+<div>
+  <div
+    class="sc-gtcAbF"
+    data-testid="footer"
+  >
+    <div
+      class="sc-dkXrac giTvmx"
+    >
+      <div
+        data-testid="grid"
+        fluid="demo"
+      >
+        <div
+          between="xs"
+          center="xs"
+          data-testid="row"
+          middle="xs"
+        >
+          <div
+            data-testid="col"
+            lg="6"
+            md="12"
+            sm="12"
+            xl="6"
+            xs="12"
+          >
+            <div
+              class="sc-hKVryf dtOJXn"
+            >
+              Copyright © 2023 Árvore. Todos os direitos reservados.
+            </div>
+          </div>
+          <div
+            data-testid="col"
+            lg="6"
+            md="2"
+            sm="3"
+            xl="6"
+            xs="4"
+          >
+            <div
+              class="sc-eCQiwC biyLda"
+            >
+              <button
+                class="sc-bdDrbm dGflXy"
+                type="button"
+              >
+                Política de privacidade
+              </button>
+              <button
+                class="sc-bdDrbm dGflXy"
+                type="button"
+              >
+                Ajuda
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

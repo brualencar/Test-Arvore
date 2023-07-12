@@ -18,8 +18,9 @@ function Search() {
   };
 
   return (
-    <Styled.Wrapper datatest-id='search'>
+    <Styled.Wrapper data-testid='search'>
       <Styled.Input
+        data-testid='search-input'
         type='search'
         placeholder='Search'
         onChange={eventOnInput}

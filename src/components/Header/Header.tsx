@@ -7,7 +7,7 @@ import * as Styled from './Header.style';
 
 function Header() {
   return (
-    <Styled.Wrapper datatest-id='header'>
+    <Styled.Wrapper data-testid='header'>
       <Styled.Container>
         <Grid fluid>
           <Row
