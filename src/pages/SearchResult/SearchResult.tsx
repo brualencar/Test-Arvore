@@ -92,7 +92,9 @@ function SearchResult() {
   );
 
   const observerTarget = useRef(null);
-
+  // todo: deal with startIndex update, by splitting the useEffect into two parts:
+  // - one with the instantiation and the start index listed as a dependency
+  // - and one with the listener (observe/unobserve)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

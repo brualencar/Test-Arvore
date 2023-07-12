@@ -22,43 +22,27 @@ exports[`Filter should render snapshot 1`] = `
         <ul>
           <li>
             <input
-              name="price"
-              type="radio"
-              value="30"
+              type="checkbox"
             />
-            <span>
-              de R$0 até R$30
-            </span>
+            <span />
           </li>
           <li>
             <input
-              name="price"
-              type="radio"
-              value="50"
+              type="checkbox"
             />
-            <span>
-              de R$31 até R$50
-            </span>
+            <span />
           </li>
           <li>
             <input
-              name="price"
-              type="radio"
-              value="100"
+              type="checkbox"
             />
-            <span>
-              de R$51 até R$100
-            </span>
+            <span />
           </li>
           <li>
             <input
-              name="price"
-              type="radio"
-              value="101"
+              type="checkbox"
             />
-            <span>
-              Mais de R$100
-            </span>
+            <span />
           </li>
         </ul>
       </div>

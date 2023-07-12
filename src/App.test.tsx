@@ -4,16 +4,43 @@ import { render, screen } from '@testing-library/react';
 
 import App from './App';
 
+jest.mock('react-flexbox-grid', () => ({
+  Grid: ({ ...props }) => {
+    const tempProps = { ...props, fluid: 'demo' };
+
+    return (
+      <div
+        data-testid='grid'
+        {...tempProps}
+      />
+    );
+  },
+  Row: ({ ...props }) => {
+    const tempProps = { ...props };
+
+    return (
+      <div
+        data-testid='row'
+        {...tempProps}
+      />
+    );
+  },
+  Col: ({ ...props }) => {
+    const tempProps = { ...props };
+
+    return (
+      <div
+        data-testid='col'
+        {...tempProps}
+      />
+    );
+  },
+}));
+
 describe('renders learn react link', () => {
   it('snapshot', () => {
-    render(<App />);
-    const linkElement = screen.getByText('New App');
-    expect(linkElement).toMatchSnapshot();
-  });
+    const { container } = render(<App />);
 
-  it('should render', () => {
-    render(<App />);
-    const linkElement = screen.getByText('New App');
-    expect(linkElement).toBeTruthy();
+    expect(container).toMatchSnapshot();
   });
 });
