@@ -1,4 +1,6 @@
-import React, { useCallback, useState } from 'react';
+import React from 'react';
+
+import { ItemProps, Root } from 'pages/SearchResult/SearchResult';
 
 import { Button } from '../Button';
 import * as Styled from './Filter.style';
@@ -9,80 +11,54 @@ type Item = {
   complexValue?: { from: number; to?: number };
 };
 
-type Filter = {
-  title: string;
-  id: string;
-  items: Item[];
-};
-
-export type OnChangeParams = {
-  id: string;
-  value: Item['value'];
-  complexValue: Item['complexValue'];
-};
-
 export type OnFilterChangeParams = {
   [key: string]: { value: Item['value']; complexValue: Item['complexValue'] };
 };
 
+export interface IFilterProps {
+  mainTitle: string;
+  filters: Root;
+  dispatch: React.Dispatch<any>;
+  hasSelectedFilters: boolean;
+  resetFilters: () => void;
+}
+
 function Filter({
   mainTitle,
   filters,
-  onFilterChange,
-  clearFilter,
-}: {
-  mainTitle: string;
-  filters: Filter[];
-  onFilterChange: (currentFilters: OnFilterChangeParams) => void;
-  clearFilter: () => void;
-}) {
-  const [selectedOption, setSelectedOption] = useState<string | number>();
-  const [currentFilters, setCurrentFilters] = useState({});
-  const onChange = useCallback(
-    ({ id, value, complexValue }: OnChangeParams) => {
-      const newCurrentFilters = {
-        ...currentFilters,
-        [id]: { value, complexValue },
-      };
-      setCurrentFilters(newCurrentFilters);
-      onFilterChange(newCurrentFilters);
-      setSelectedOption(value);
-    },
-    [setCurrentFilters, onFilterChange, currentFilters]
-  );
-
-  // todo usecalbback
-  const handleReset = () => {
-    setSelectedOption('');
-    clearFilter();
+  dispatch,
+  hasSelectedFilters,
+  resetFilters,
+}: IFilterProps) {
+  const handleToggleCheckbox = (itemIndex: any, filterType: string) => {
+    dispatch({ type: 'TOGGLE_CHECKBOX', itemIndex, filterType });
   };
 
   return (
     <Styled.Wrapper>
       <Styled.MainTitle>{mainTitle}</Styled.MainTitle>
-      {selectedOption && (
+      {hasSelectedFilters && (
         <Button
           isUppercase
           text='Limpar Filtro'
           variant='secondary'
-          onClick={handleReset}
+          onClick={resetFilters}
         />
       )}
-      {filters.map(({ title, items, id }) => (
-        <div key={id}>
-          <Styled.Title>{title}</Styled.Title>
+      {Object.entries(filters).map(([filterType, category]) => (
+        <div key={category.title}>
+          <Styled.Title>{category.title}</Styled.Title>
           <Styled.Filter>
             <ul>
-              {items.map(({ text, value, complexValue }) => (
-                <li key={value}>
+              {category?.items?.map((item: ItemProps, index: any) => (
+                <li key={item.label}>
                   <input
-                    checked={selectedOption === value}
-                    name={id}
-                    type='radio'
-                    value={value}
-                    onChange={() => onChange({ id, value, complexValue })}
+                    name={item.label}
+                    type='checkbox'
+                    checked={item.checked}
+                    onChange={() => handleToggleCheckbox(index, filterType)}
                   />
-                  <span>{text}</span>
+                  <span>{item.label}</span>
                 </li>
               ))}
             </ul>
