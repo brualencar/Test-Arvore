@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Filter should render snapshot 1`] = `
+<div>
+  <div
+    class="sc-gtcAbF jfXzsC"
+  >
+    <p
+      class="sc-dkXrac lbHbYC"
+    >
+      Title
+    </p>
+    <div>
+      <p
+        class="sc-hKVryf kiBiQw"
+      >
+        Preço
+      </p>
+      <div
+        class="sc-eCQiwC cPAvbM"
+      >
+        <ul>
+          <li>
+            <input
+              name="price"
+              type="radio"
+              value="30"
+            />
+            <span>
+              de R$0 até R$30
+            </span>
+          </li>
+          <li>
+            <input
+              name="price"
+              type="radio"
+              value="50"
+            />
+            <span>
+              de R$31 até R$50
+            </span>
+          </li>
+          <li>
+            <input
+              name="price"
+              type="radio"
+              value="100"
+            />
+            <span>
+              de R$51 até R$100
+            </span>
+          </li>
+          <li>
+            <input
+              name="price"
+              type="radio"
+              value="101"
+            />
+            <span>
+              Mais de R$100
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+`;

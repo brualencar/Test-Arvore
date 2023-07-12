@@ -2,7 +2,7 @@ export const theme = {
   colors: {
     background: {
       neutral: {
-        white: '#FFF',
+        white: '#FFFFFF',
         light: '#F1F7FC',
         default: '#DEE1E6',
         strong: '#ADB7BF',
@@ -19,7 +19,7 @@ export const theme = {
       neutral: {
         white: '#FFF',
         default: '#406A76',
-        strong: '#000',
+        strong: '#000000',
         light: '#B2B4B9',
         week: '#999',
         medium: '#9EAEB7',

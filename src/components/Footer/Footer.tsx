@@ -6,7 +6,7 @@ import * as Styled from './Footer.style';
 
 function Footer() {
   return (
-    <Styled.Wrapper datatest-id='footer'>
+    <Styled.Wrapper data-testid='footer'>
       <Styled.Container>
         <Grid fluid>
           <Row
